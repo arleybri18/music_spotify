@@ -17,7 +17,7 @@ end
 def albums_params
   {
       name: Faker::Music.unique.album,
-      image_url: Faker::Avatar.image,
+      image_url: Faker::LoremFlickr.image(size: "50x60"),
       released_at: Faker::Date.between(from: 10.years.ago, to: Date.today)
   }
 end
