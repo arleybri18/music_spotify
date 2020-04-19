@@ -1,0 +1,26 @@
+<div class="container">
+  <h2 class="p-3 text-center bg-primary text-white"><%= @artist.name.upcase %></h2>
+  <div class="row">
+    <div class="col-sm-9">
+      <h3> Albums (<%= @artist.albums.count %>)</h3>
+      <div class="row">
+        <% @artist.albums.each do |album| %>
+          <div class="col-sm-4 pt-5">
+            <div class="card">
+              <img src=<%= album.image_url  %> class="card-img-top" alt=<%= album.name %>>
+              <div class="card-body">
+                <h5 class="card-title text-center"><%= album.name.upcase %></h5>
+                <p> <%= album.released_at.year %></p>
+                <%= link_to "ver mas","#", class: "btn btn-primary btn-block" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <img src=<%= @artist.image_url %> alt=<%= @artist.name %> class="border border-success rounded-circle">
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+  <h2 class="pt-3 text-center">List of Artists</h2>
+  <div class="row">
+    <% @artists.each do |artist| %>
+      <div class="col-sm-3 pt-5">
+        <div class="card">
+          <img src=<%= artist.image_url  %> class="card-img-top" alt=<%= artist.name %>>
+          <div class="card-body">
+            <h5 class="card-title text-center"><%= artist.name.upcase %></h5>
+            <%= link_to "ver mas", artist_path(artist), class: "btn btn-primary btn-block" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
